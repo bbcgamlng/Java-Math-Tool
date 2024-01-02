@@ -1,0 +1,161 @@
+import java.util.Scanner;
+import java.lang.Math;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("\nList of all services\n--------------------------\n\n1.) Distance Formula\n2.) Quadratic Equation\n3.) Square Root\n4.) Volume Calculator\n5.) Area Calculator\nEnter Here: ");
+        int userInput = input.nextInt();
+        switch(userInput){
+            case 1:
+                System.out.println("Enter Your X value(first): ");
+                int x1 = 0;
+                int x2 = 0;
+                int y1 = 0;
+                int y2 = 0;
+                if(input.hasNextInt()){
+                    x1 = input.nextInt();
+                }
+                else{
+                    System.out.println("Sorry, No demical numbers");
+                    System.exit(0);
+                }
+
+                System.out.println("Enter Your Y value(first): ");
+                if(input.hasNextInt()){
+                    y1 = input.nextInt();
+                }
+                else{
+                    System.out.println("Sorry, No demical numbers");
+                    System.exit(0);
+                }
+                System.out.println("Enter Your X value(second): ");
+                if(input.hasNextInt()){
+                    x2 = input.nextInt();
+                }
+                else{
+                    System.out.println("Sorry, No demical numbers");
+                    System.exit(0);
+                }
+                System.out.println("Enter Your Y value(second): ");
+                if(input.hasNextInt()){
+                    y2 = input.nextInt();
+                }
+                else{
+                    System.out.println("Sorry, No demical numbers");
+                    System.exit(0);
+                }
+                double num1 =Math.pow(((double)x2-x1), 2);
+                double num2 =Math.pow(((double)y2-y1), 2);
+                double total = num1+num2;
+                double awnser = Math.sqrt(total);
+                System.out.println("The distance is "+awnser+".");
+                break;
+            case 2:
+                System.out.println("Enter the coefficients of the quadratic equation:");
+                System.out.print("a: ");
+                double a = input.nextDouble();
+                System.out.print("b: ");
+                double b = input.nextDouble();
+                System.out.print("c: ");
+                double c = input.nextDouble();;
+                double discriminant = b * b - 4 * a * c;
+                if (discriminant > 0) {
+                    double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                    System.out.println("Root 1: " + root1);
+                    System.out.println("Root 2: " + root2);
+                } else if (discriminant == 0) {
+                    double root = -b / (2 * a);
+                    System.out.println("Root: " + root);
+                } else {
+                    System.out.println("No real roots. The roots are complex.");
+                }
+                break;
+
+            case 3:
+                System.out.print("Enter the Number: ");
+                int sqrut = input.nextInt();
+                System.out.println(Math.sqrt(sqrut));
+                break;
+
+            case 4:
+                System.out.print("\n\nHere are your options\n1.)Sphere\n2.)Cone\n3.)Cube\n4.)Cylinder\nEnter Here: ");
+                int userChose = input.nextInt();
+                switch(userChose){
+                    case 1:
+                        System.out.print("Enter Your Radius: ");
+                        double rad = input.nextDouble();
+                        double total69 = ((4.0/3)*Math.PI*(Math.pow(rad,3)));
+                        System.out.println("Your answer is "+total69);
+                        break;
+                    case 2:
+                        System.out.print("Enter Your Base Radius: ");
+                        double rad2 = input.nextDouble();
+                        System.out.print("Enter Your Height: ");
+                        double height = input.nextDouble();
+                        double total420 = ((1.0/3)*Math.PI*(Math.pow(rad2,2))*height);
+                        System.out.println("Your answer is "+total420);
+                        break;
+                    case 3:
+                        System.out.print("Enter Your Edge Length: ");
+                        double edgelen = input.nextDouble();
+                        double total6969 = Math.pow(edgelen,3);
+                        System.out.println("Your answer is "+total6969);
+                        break;
+                    case 4:
+                        System.out.print("Enter Your Base Radius: ");
+                        double rad3 = input.nextDouble();
+                        System.out.print("Enter Your Height: ");
+                        double height2 = input.nextDouble();
+                        double total42069 = (Math.PI*(Math.pow(rad3,2))*height2);
+                        System.out.println("Your answer is "+total42069);
+                        break;
+                    default:
+                        System.out.println("\nyou did not enter a Vaild number!");
+                        System.exit(0);
+                        break;
+                }
+
+            case 5:
+                System.out.print("\n\nHere are your options\n1.)Rectangle\n2.)Triangle\n3.)Circle\n4.)Parallelogram\nEnter Here: ");
+                int userChose4 = input.nextInt();
+                switch(userChose4){
+                    case 1:
+                        System.out.print("Enter the Length: ");
+                        int length2383 = input.nextInt();
+                        System.out.print("Enter the Width: ");
+                        int width2383 = input.nextInt();
+                        System.out.println("Your Area is "+(length2383*width2383));
+                        break;
+
+                    case 2:
+                        System.out.print("Enter the Edge 1: ");
+                        int edge1 = input.nextInt();
+                        System.out.print("Enter the Edge 2: ");
+                        int edge2 = input.nextInt();
+                        System.out.print("Enter the Edge 3: ");
+                        int edge3 = input.nextInt();
+                        System.out.print("Your Area is "+((edge1+edge2+edge3)/2.0));
+                        break;
+
+                    case 3:
+                        System.out.print("Enter the Radius: ");
+                        int rad333 = input.nextInt();
+                        System.out.println("Your Area is "+Math.PI*(Math.pow(rad333,2)));
+                        break;
+                    case 4:
+                        System.out.print("Enter the Base: ");
+                        int length23833 = input.nextInt();
+                        System.out.print("Enter the Height: ");
+                        int width23833 = input.nextInt();
+                        System.out.println("Your Area is "+(length23833*width23833));
+                        break;
+                    default:
+                        System.out.println("You did not enter a Value Number");
+                        break;
+
+
+            }
+        }
+    }
+}
